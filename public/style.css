@@ -211,3 +211,45 @@ section{
 #contact{
     margin-top: 40px;
 }
+
+@media (max-width: 768px){
+
+nav{
+flex-direction:column;
+text-align:center;
+}
+
+nav ul{
+flex-direction:column;
+gap:10px;
+padding:0;
+}
+
+.hero{
+padding:60px 20px;
+}
+
+.profile{
+width:120px;
+height:120px;
+}
+
+.grid{
+flex-direction:column;
+align-items:center;
+}
+
+.card{
+width:90%;
+}
+
+.dashboard{
+flex-direction:column;
+align-items:center;
+}
+
+form{
+width:90%;
+}
+
+}
