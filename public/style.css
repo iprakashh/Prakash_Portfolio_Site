@@ -273,10 +273,24 @@ width:90%;
 
 .hero-buttons{
 display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+@media (max-width:768px){
+
+.hero-buttons{
 flex-direction:column;
 align-items:center;
-gap:14px;
-width:100%;
+}
+
+.hero-buttons a{
+width:70%;
+text-align:center;
+}
+
 }
 
 .hero-buttons a{
@@ -326,27 +340,21 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 40px;
+padding:15px 20px;
 background:black;
 color:white;
+position:relative;
 }
 
-.nav-links{
-display:flex;
-gap:25px;
-list-style:none;
-}
-
-.nav-links a{
-color:white;
-text-decoration:none;
-font-size:16px;
+.logo{
+font-size:22px;
+font-weight:bold;
 }
 
 .menu-toggle{
-display:none;
 font-size:28px;
 cursor:pointer;
+display:none;
 }
 
 /* MOBILE MENU */
@@ -371,6 +379,10 @@ padding:20px 0;
 
 .nav-links.active{
 display:flex;
+}
+
+.nav-links li{
+margin:10px 0;
 }
 
 }

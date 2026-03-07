@@ -292,12 +292,14 @@ Visitors : <span id="visitor-count">0</span>
 <script src="/script.js"></script>
 
 <script>
-const menu = document.getElementById("mobile-menu");
+
+const menuToggle = document.getElementById("mobile-menu");
 const navLinks = document.getElementById("nav-links");
 
-menu.addEventListener("click", () => {
+menuToggle.addEventListener("click", function(){
 navLinks.classList.toggle("active");
 });
+
 </script>
 </body>
 
