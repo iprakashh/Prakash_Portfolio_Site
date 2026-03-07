@@ -31,7 +31,7 @@ service: "gmail",
 
 auth: {
 user: "pikugee99@gmail.com",
-pass: "hsdu yjep abxq ibih"
+pass: "kltv vqno vios arui"
 }
 
 });
