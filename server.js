@@ -1,19 +1,23 @@
 const express = require("express");
+const path = require("path");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Serve static files
+app.use(express.static(path.join(__dirname, "public")));
 
 // Homepage route
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(path.join(__dirname, "views", "index.html"));
 });
 
 // Contact form
-app.post("/contact", (req, res) => {
+app.post("/contact", async (req, res) => {
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -34,16 +38,15 @@ Message: ${req.body.message}
 `
   };
 
-  transporter.sendMail(mailOptions, (error) => {
-    if (error) {
-      res.send("Error sending message");
-    } else {
-      res.send("Message sent successfully");
-    }
-  });
+  try {
+    await transporter.sendMail(mailOptions);
+    res.send("Message Sent Successfully");
+  } catch (error) {
+    res.send("Error sending message");
+  }
 
 });
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+app.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
 });
