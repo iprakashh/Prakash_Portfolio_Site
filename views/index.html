@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prakash Sharma | Portfolio</title>
+
+<title>Prakash Sharma | QA Automation Engineer</title>
+
 <link rel="stylesheet" href="/style.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body>
 
 <nav>
-<div class="logo">Prakash Sharma</div>
 
-<div class="menu-toggle" id="mobile-menu">
+<h2 class="logo">Prakash Sharma</h2>
+
+<div class="hamburger" id="hamburger">
 ☰
 </div>
 
-<ul class="nav-links" id="nav-links">
+<ul id="nav-links">
 <li><a href="#about">About</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#experience">Experience</a></li>
@@ -25,25 +28,27 @@
 <li><a href="#certifications">Certifications</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
+
+<button onclick="toggleDarkMode()" class="darkbtn">🌙</button>
+
 </nav>
+
 
 <header class="hero">
 
-<img src="/prakash.jpg" class="profile-img">
+<img src="/prakash.jpg" class="profile">
 
 <h1>Prakash Sharma</h1>
 
 <p>QA Engineer | Automation Tester | Selenium Specialist</p>
 
-<p class="location">📍 Faridabad, Haryana</p>
+<div class="buttons">
 
-<div class="hero-buttons">
+<a class="btn" href="https://www.linkedin.com/in/prakash-sharmaji/" target="_blank">LinkedIn</a>
 
-<a href="https://linkedin.com" target="_blank">LinkedIn</a>
+<a class="btn" href="https://github.com/iprakashh" target="_blank">GitHub</a>
 
-<a href="https://github.com/iprakashh" target="_blank">GitHub</a>
-
-<a href="/resume.pdf" target="_blank">Resume</a>
+<a class="btn" href="/resume.pdf" download>Resume</a>
 
 </div>
 
@@ -55,8 +60,12 @@
 <h2>About Me</h2>
 
 <p>
-QA Engineer with nearly <b>4 years of experience</b> in software testing and automation.
-Currently working at Infosys delivering high-quality applications and improving reliability through automation.
+
+QA Engineer with nearly 4 years of experience in software testing and automation.  
+Specialized in Selenium with Java, regression testing, API validation, and defect lifecycle management.  
+
+Currently working at Infosys where I focus on improving system reliability, automating repetitive test flows, and ensuring seamless user experience across enterprise applications.
+
 </p>
 
 </section>
@@ -66,24 +75,49 @@ Currently working at Infosys delivering high-quality applications and improving 
 
 <h2>Skills</h2>
 
-<div class="skill">
-<span>Selenium</span>
-<div class="bar"><div class="fill" style="width:90%"></div></div>
+<div class="skillbar">
+
+<p>Selenium</p>
+<div class="bar"><div class="progress selenium"></div></div>
+
+<p>Java</p>
+<div class="bar"><div class="progress java"></div></div>
+
+<p>Manual Testing</p>
+<div class="bar"><div class="progress manual"></div></div>
+
+<p>API Testing</p>
+<div class="bar"><div class="progress api"></div></div>
+
 </div>
 
-<div class="skill">
-<span>Java</span>
-<div class="bar"><div class="fill" style="width:85%"></div></div>
-</div>
+</section>
 
-<div class="skill">
-<span>Manual Testing</span>
-<div class="bar"><div class="fill" style="width:90%"></div></div>
-</div>
 
-<div class="skill">
-<span>API Testing</span>
-<div class="bar"><div class="fill" style="width:80%"></div></div>
+<section id="experience">
+
+<h2>Experience</h2>
+
+<div class="card">
+
+<h3>Systems Engineer — Infosys</h3>
+
+<p>Apr 2022 – Present</p>
+
+<ul>
+
+<li>Built Selenium automation framework using Java reducing manual testing effort.</li>
+
+<li>Executed regression, integration and API test scenarios.</li>
+
+<li>Managed defect lifecycle using JIRA and Zephyr.</li>
+
+<li>Improved operational efficiency by introducing automation pipelines.</li>
+
+<li>Worked closely with developers and product teams to deliver high quality releases.</li>
+
+</ul>
+
 </div>
 
 </section>
@@ -93,27 +127,47 @@ Currently working at Infosys delivering high-quality applications and improving 
 
 <h2>Projects</h2>
 
-<div class="projects-container">
+<div class="projects">
 
-<div class="project-card">
-<h3>Trade & Operations Processing System</h3>
+<div class="card">
+
+<h3>Trade Processing System</h3>
+
 <p>
-Enterprise trading platform where I designed automation and manual test cases to validate workflows and system accuracy.
+
+Automated testing for a financial trading platform.  
+Designed regression scenarios and automated critical workflows using Selenium to validate system accuracy.
+
 </p>
+
 </div>
 
-<div class="project-card">
+
+<div class="card">
+
 <h3>LIC Sales Super Saathi</h3>
+
 <p>
-System integration testing project supporting UAT, defect tracking using Jira and Zephyr, and validating business workflows.
+
+Supported UAT and integration testing for LIC digital sales platform.  
+Tracked defects, prepared test cases, and ensured stable production releases.
+
 </p>
+
 </div>
 
-<div class="project-card">
+
+<div class="card">
+
 <h3>Honest Feedback Web App</h3>
+
 <p>
-Node.js based web application allowing anonymous feedback with secure backend and responsive UI.
+
+Node.js based web application allowing anonymous feedback collection.  
+Built full stack solution including frontend UI and backend API handling.
+
 </p>
+
 </div>
 
 </div>
@@ -125,41 +179,56 @@ Node.js based web application allowing anonymous feedback with secure backend an
 
 <h2>Certifications</h2>
 
-<ul>
-<li>Microsoft GitHub Foundations</li>
-<li>Microsoft GitHub Copilot Certification</li>
-</ul>
+<div class="projects">
+
+<div class="card">
+<h3>Microsoft GitHub Foundations</h3>
+<p>Understanding Git, GitHub workflows, version control and collaboration.</p>
+</div>
+
+<div class="card">
+<h3>Microsoft GitHub Copilot Certification</h3>
+<p>Learning AI assisted coding and developer productivity with GitHub Copilot.</p>
+</div>
+
+</div>
 
 </section>
 
 
 <section id="contact">
-
 <h2>Contact Me</h2>
 
-<form action="/contact" method="POST">
+<div class="contact-container">
 
-<input type="text" name="name" placeholder="Your Name" required>
+<div class="contact-card">
+<h3>📧 Email</h3>
+<p>Reach me directly through email.</p>
+<a href="mailto:pikugee99@gmail.com" class="contact-btn">Send Email</a>
+</div>
 
-<input type="email" name="email" placeholder="Your Email" required>
+<div class="contact-card">
+<h3>📱 WhatsApp</h3>
+<p>Quick chat on WhatsApp.</p>
+<a href="https://wa.me/919756802502" target="_blank" class="contact-btn">Chat Now</a>
+</div>
 
-<textarea name="message" placeholder="Your Message"></textarea>
+<div class="contact-card">
+<h3>📞 Call</h3>
+<p>Available for quick calls.</p>
+<a href="tel:+919756802502" class="contact-btn">Call Me</a>
+</div>
 
-<button type="submit">Send Message</button>
-
-</form>
+</div>
 
 </section>
-
-
 <footer>
 
 <p>© 2026 Prakash Sharma</p>
 
+<p>Visitors : <span id="visitor-count"></span></p>
+
 </footer>
-
-
-<button id="topBtn">↑</button>
 
 <script src="/script.js"></script>
 
