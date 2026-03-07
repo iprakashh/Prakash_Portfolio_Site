@@ -1,74 +1,39 @@
-const express = require("express");
-const path = require("path");
-const nodemailer = require("nodemailer");
+const express = require("express")
+const bodyParser = require("body-parser")
+const nodemailer = require("nodemailer")
 
-const app = express();
-const PORT = 3000;
+const app = express()
 
-let visitors = 0;
+app.use(express.static(__dirname))
+app.use(bodyParser.urlencoded({extended:true}))
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
-
-app.get("/", (req, res) => {
-res.sendFile(path.join(__dirname, "views", "index.html"));
-});
-
-app.get("/visitor-count", (req, res) => {
-visitors++;
-res.json({ count: visitors });
-});
-
-app.post("/contact", async (req, res) => {
-
-const { name, email, message } = req.body;
-
-try {
+app.post("/contact",(req,res)=>{
 
 const transporter = nodemailer.createTransport({
+service:"gmail",
+auth:{
+user:"pikugee99@gmail.com",
+pass:"tgqo hhln civb qgon"
+}
+})
 
-service: "gmail",
-
-auth: {
-user: "pikugee99@gmail.com",
-pass: "kltv vqno vios arui"
+const mailOptions={
+from:req.body.email,
+to:"pikugee99@gmail.com",
+subject:"Portfolio Contact",
+text:`Name: ${req.body.name}
+Email: ${req.body.email}
+Message: ${req.body.message}`
 }
 
-});
-
-await transporter.sendMail({
-
-from: email,
-to: "pikugee99@gmail.com",
-subject: `Portfolio Message from ${name}`,
-
-text:
-`Name: ${name}
-Email: ${email}
-
-Message:
-${message}`
-
-});
-
-res.send(`
-<h2>Message sent successfully!</h2>
-<a href="/">Go Back</a>
-`);
-
-} catch (error) {
-
-console.log(error);
-
-res.send(`
-<h2>Error sending message.</h2>
-<a href="/">Try Again</a>
-`);
-
+transporter.sendMail(mailOptions,function(error){
+if(error){
+res.send("Error sending message")
+}else{
+res.send("Message sent successfully")
 }
+})
 
-});
+})
 
-app.listen(PORT, () => {
-console.log("Portfolio running on port " + PORT);
-});
+app.listen(3000)
